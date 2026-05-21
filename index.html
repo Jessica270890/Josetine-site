@@ -442,7 +442,7 @@ footer { background: #2C1018; padding: 36px 6%; }
   </div>
 </div>
 
-<section class="pain">
+<section class="pain" id="section-pain">
   <div class="pain-inner">
     <div class="pain-header">
       <span class="pain-label">Josetine est fait pour vous si...</span>
@@ -468,7 +468,7 @@ footer { background: #2C1018; padding: 36px 6%; }
   </div>
 </section>
 
-<section class="why">
+<section class="why" id="section-why">
   <div class="why-inner">
     <div class="why-header">
       <h2>Pourquoi choisir Josetine ?</h2>
@@ -602,6 +602,23 @@ const MODES = {
     trustBg: '#F9F5F3',
     navBtnText: 'Essai gratuit', navBtnBg: '#6B1E35',
     modeClass: '',
+    pain: {
+      title: 'Vous vous reconnaissez dans l\'une de ces situations ?',
+      cards: [
+        { icon: '🗂️', title: 'Vous gérez plusieurs clients', text: 'Et vous jonglez entre des dizaines d\'onglets, d\'outils et de tableaux Excel pour tout suivre.' },
+        { icon: '⏰', title: 'Vous oubliez des échéances', text: 'Dates de renouvellement, fins de contrat, visites médicales... rien ne devrait passer entre les mailles.' },
+        { icon: '📊', title: 'Vous ne savez pas si vous êtes rentable', text: 'Temps passé, forfaits dépassés, heures non facturées... Josetine calcule tout en temps réel.' },
+      ],
+    },
+    why: {
+      sub: 'Un outil pensé pour la réalité des assistantes indépendantes',
+      bg: 'var(--bordeaux)',
+      cards: [
+        { num: '01', title: 'Conçu par une assistante', desc: 'Josetine est né d\'un besoin réel. Chaque fonctionnalité a été pensée pour le quotidien des assistantes indépendantes, pas pour des comptables ou des commerciaux.' },
+        { num: '02', title: 'Tout en un, vraiment', desc: 'Clients, facturation, temps, agenda, fournisseurs, commercial — tout au même endroit. Fini les 10 outils dispersés, les exports manuels et les tableaux Excel interminables.' },
+        { num: '03', title: 'Simple et accessible', desc: 'Interface épurée, prise en main immédiate. Démarrez gratuitement avec 3 clients, sans carte bancaire ni engagement. Évoluez à votre rythme.' },
+      ],
+    },
   },
   entreprise: {
     heroBg: '#1A3A5C',
@@ -632,6 +649,23 @@ const MODES = {
     trustBg: '#EEF3FC',
     navBtnText: 'Demander une démo', navBtnBg: '#1A3A5C',
     modeClass: 'mode-entreprise',
+    pain: {
+      title: 'Vous vous reconnaissez dans l\'une de ces situations ?',
+      cards: [
+        { icon: '🏢', title: 'Vous gérez plusieurs entités', text: 'Fournisseurs, employés, échéances... chaque structure a ses propres données et vous jongler entre tout ça sans outil dédié.' },
+        { icon: '⏰', title: 'Vous perdez le fil des échéances RH', text: 'Fins de période d\'essai, visites médicales, entretiens annuels... ça passe entre les mailles sans système centralisé.' },
+        { icon: '⚖️', title: 'Vous ne savez plus où en sont vos litiges', text: 'Factures contestées, contentieux en cours... sans suivi structuré, des dossiers traînent sans avancer.' },
+      ],
+    },
+    why: {
+      sub: 'Un outil pensé pour la réalité des assistantes en entreprise',
+      bg: '#1A3A5C',
+      cards: [
+        { num: '01', title: 'Conçu pour l\'entreprise', desc: 'Josetine est né du besoin réel d\'assistantes salariées. Chaque fonctionnalité est pensée pour le quotidien multi-entités, pas pour les indépendants ou les commerciaux.' },
+        { num: '02', title: 'Tout en un, vraiment', desc: 'Entités, fournisseurs, RH, litiges, agenda, documentation — tout au même endroit. Fini les outils dispersés, les exports manuels et les tableaux Excel interminables.' },
+        { num: '03', title: 'Simple et sécurisé', desc: 'Interface épurée, prise en main immédiate. Données chiffrées AES-256, hébergées en Europe. Aucune donnée RH ou sensible ne sort de votre espace.' },
+      ],
+    },
   },
 };
 
@@ -695,6 +729,26 @@ function setHeroMode(mode) {
     document.querySelectorAll('.switcher-btn').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.mode === mode);
     });
+    // pain section
+    const painTitle = document.querySelector('#section-pain .pain-title');
+    const painGrid = document.querySelector('#section-pain .pain-grid');
+    if (painTitle && painGrid && m.pain) {
+      painTitle.textContent = m.pain.title;
+      painGrid.innerHTML = m.pain.cards.map(c =>
+        `<div class="pain-card"><span class="pain-card-icon">${c.icon}</span><div class="pain-card-title">${c.title}</div><div class="pain-card-text">${c.text}</div></div>`
+      ).join('');
+    }
+    // why section
+    const whySection = document.getElementById('section-why');
+    const whySub = document.querySelector('#section-why .why-header p');
+    const whyGrid = document.querySelector('#section-why .why-grid');
+    if (whySection && whyGrid && m.why) {
+      whySection.style.background = m.why.bg;
+      whySub.textContent = m.why.sub;
+      whyGrid.innerHTML = m.why.cards.map(c =>
+        `<div class="why-card"><div class="why-num">${c.num}</div><div class="why-title">${c.title}</div><div class="why-desc">${c.desc}</div></div>`
+      ).join('');
+    }
     // save
     localStorage.setItem('josetineMode', mode);
     // fade in
