@@ -58,6 +58,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,245,
 .btn-outline-plan a:hover{border-color:var(--bordeaux);color:var(--bordeaux);}
 .btn-fill-plan a{background:var(--bordeaux);color:white;}
 .btn-fill-plan a:hover{background:var(--bordeaux-dark);}
+.plan-entreprise{border:2px solid #1A3A5C;}
+.plan-entreprise:hover{box-shadow:0 8px 32px rgba(26,58,92,0.1);}
+.plan-entreprise .check{color:#1A3A5C;}
+.plan-entreprise .plan-btn a{background:#1A3A5C;color:white;border:none;}
+.plan-entreprise .plan-btn a:hover{background:#0D2540;}
 
 .faq{padding:0 6% 80px;}
 .faq-inner{max-width:800px;margin:0 auto;}
@@ -188,7 +193,7 @@ footer{background:#2C1018;padding:36px 6%;}
         <div class="plan-btn btn-outline-plan"><a href="#" onclick="openSignupForPlan('Studio');return false;">Choisir ce plan</a></div>
       </div>
 
-      <div class="plan">
+      <div class="plan plan-entreprise">
         <div class="plan-name">Entreprise</div>
         <div class="plan-tagline">Pour les assistantes salariées en entreprise</div>
         <div class="plan-price" id="p-ent">25 € HT<sub> / mois</sub></div>
