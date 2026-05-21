@@ -138,6 +138,10 @@ footer{background:#2C1018;padding:36px 6%;}
       <span class="saving-pill">-20%</span>
     </div>
 
+    <div style="text-align:center;max-width:720px;margin:0 auto 36px;padding:18px 24px;background:#FFF8E7;border-radius:10px;border:1px solid #F0D88A;">
+      <p style="font-size:14px;color:#5C4A00;line-height:1.7;font-weight:400;">💡 <strong>Trello + Asana + Clockify séparément ?</strong> Comptez 25 à 35 €/mois — pour des outils qui ne sont pas pensés pour votre métier. Josetine remplace tout ça en un seul outil, conçu pour les assistantes.</p>
+    </div>
+
     <div class="plans">
       <div class="plan">
         <div class="plan-name">Découverte</div>
@@ -162,8 +166,8 @@ footer{background:#2C1018;padding:36px 6%;}
         <div class="plan-badge">Le plus populaire</div>
         <div class="plan-name">Indépendant</div>
         <div class="plan-tagline">Pour les freelances et indépendantes</div>
-        <div class="plan-price" id="p-ind">19 € HT<sub> / mois</sub></div>
-        <div class="plan-period" id="per-ind">puis 19€ HT/mois — sans engagement</div>
+        <div class="plan-price" id="p-ind">29 € HT<sub> / mois</sub></div>
+        <div class="plan-period" id="per-ind">puis 29€ HT/mois — sans engagement</div>
         <hr class="plan-divider">
         <div class="plan-section-label">Tout Découverte, plus :</div>
         <div class="plan-feature"><span class="check">✓</span>2 utilisateurs</div>
@@ -182,8 +186,8 @@ footer{background:#2C1018;padding:36px 6%;}
       <div class="plan">
         <div class="plan-name">Studio</div>
         <div class="plan-tagline">Pour les petites équipes</div>
-        <div class="plan-price" id="p-stu">39 € HT<sub> / mois</sub></div>
-        <div class="plan-period" id="per-stu">Facturé 468 € HT/an</div>
+        <div class="plan-price" id="p-stu">45 € HT<sub> / mois</sub></div>
+        <div class="plan-period" id="per-stu">Facturé 540 € HT/an</div>
         <hr class="plan-divider">
         <div class="plan-section-label">Tout Indépendant, plus :</div>
         <div class="plan-feature"><span class="check">✓</span>Utilisateurs illimités</div>
@@ -196,8 +200,8 @@ footer{background:#2C1018;padding:36px 6%;}
       <div class="plan plan-entreprise">
         <div class="plan-name">Entreprise</div>
         <div class="plan-tagline">Pour les assistantes salariées en entreprise</div>
-        <div class="plan-price" id="p-ent">25 € HT<sub> / mois</sub></div>
-        <div class="plan-period" id="per-ent">Facturé 300 € HT/an</div>
+        <div class="plan-price" id="p-ent">49 € HT<sub> / mois</sub></div>
+        <div class="plan-period" id="per-ent">Facturé 588 € HT/an</div>
         <hr class="plan-divider">
         <div class="plan-section-label">Inclus</div>
         <div class="plan-feature"><span class="check">✓</span>Interface dédiée assistante salariée</div>
@@ -394,7 +398,7 @@ function toggleBilling(){
   thumb.className='toggle-thumb'+(annual?' right':'');
   document.getElementById('label-monthly').className='toggle-label'+(annual?'':' on');
   document.getElementById('label-annual').className='toggle-label'+(annual?' on':'');
-  const data={ind:[19,15],stu:[39,31],ent:[25,20]};
+  const data={ind:[29,23.2],stu:[45,36],ent:[49,39.2]};
   for(const[k,[m,a]] of Object.entries(data)){
     const p=annual?a:m;
     document.getElementById('p-'+k).innerHTML=p+' € HT<sub> / mois</sub>';
