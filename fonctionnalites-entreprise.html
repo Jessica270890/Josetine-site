@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fonctionnalités Entreprise — Josetine</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="alternate icon" href="favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--marine:#1A3A5C;--marine-dark:#0D2540;--creme:#FAF8F5;--creme-dark:#F0EDE8;--text:#2C2018;--text-muted:#7A6E68;--text-light:#A89E98;--border:rgba(26,58,92,0.12);}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--creme);color:var(--text);overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,245,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 6%;height:66px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:'Playfair Display',serif;font-size:22px;color:var(--marine);text-decoration:none;}
+.nav-logo span{font-size:10px;font-family:'DM Sans',sans-serif;font-weight:300;color:var(--text-muted);display:block;letter-spacing:0.18em;text-transform:uppercase;margin-top:-3px;}
+.nav-links{display:flex;align-items:center;gap:36px;}
+.nav-links a{font-size:14px;color:var(--text-muted);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--marine);}
+.nav-cta{display:flex;gap:10px;}
+.btn-ghost{padding:9px 22px;border:1px solid var(--border);border-radius:6px;font-size:14px;color:var(--text);background:none;cursor:pointer;font-family:'DM Sans',sans-serif;text-decoration:none;transition:all 0.2s;}
+.btn-ghost:hover{border-color:var(--marine);color:var(--marine);}
+.btn-main{padding:9px 22px;background:var(--marine);color:white;border:none;border-radius:6px;font-size:14px;font-family:'DM Sans',sans-serif;cursor:pointer;text-decoration:none;font-weight:500;}
+.btn-main:hover{background:var(--marine-dark);}
+
+.page-hero{padding:120px 6% 60px;background:var(--marine);text-align:center;}
+.page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(36px,4vw,52px);font-weight:500;color:white;margin-bottom:16px;}
+.page-hero p{font-size:17px;color:rgba(255,255,255,0.65);font-weight:300;max-width:560px;margin:0 auto;}
+
+.clarif-banner{background:#EEF3FC;border-left:4px solid #1A3A5C;border-radius:8px;padding:16px 24px;margin:24px 60px;display:flex;align-items:center;gap:16px;}
+.clarif-icon{font-size:24px;flex-shrink:0;}
+.clarif-title{font-size:14px;font-weight:600;color:#1A3A5C;margin-bottom:4px;}
+.clarif-text{font-size:13px;color:#2C3E50;line-height:1.6;}
+.features-section{padding:80px 6%;}
+.features-inner{max-width:1200px;margin:0 auto;}
+
+.feature-block{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-bottom:80px;padding-bottom:80px;border-bottom:1px solid var(--border);}
+.feature-block:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.feature-block.reverse{direction:rtl;}
+.feature-block.reverse>*{direction:ltr;}
+.feature-tag{font-size:11px;font-weight:500;color:var(--marine);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px;}
+.feature-title{font-family:'Playfair Display',serif;font-size:clamp(26px,2.5vw,36px);font-weight:500;margin-bottom:14px;line-height:1.2;}
+.feature-desc{font-size:16px;color:var(--text-muted);line-height:1.75;font-weight:300;margin-bottom:20px;}
+.feature-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.feature-list li{font-size:14px;color:var(--text-muted);display:flex;align-items:flex-start;gap:10px;}
+.feature-list li::before{content:'✓';color:var(--marine);font-weight:600;flex-shrink:0;}
+
+.cta-band{background:var(--marine-dark);padding:60px 6%;text-align:center;}
+.cta-band h2{font-family:'Playfair Display',serif;font-size:clamp(24px,2.5vw,36px);font-weight:500;color:white;margin-bottom:12px;}
+.cta-band p{font-size:16px;color:rgba(255,255,255,0.6);margin-bottom:28px;font-weight:300;}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn-cta-white{padding:13px 28px;background:white;color:var(--marine);border:none;border-radius:8px;font-size:15px;font-family:'DM Sans',sans-serif;cursor:pointer;text-decoration:none;font-weight:500;display:inline-block;}
+.btn-cta-outline{padding:13px 28px;border:1.5px solid rgba(255,255,255,0.4);color:white;border-radius:8px;font-size:15px;font-family:'DM Sans',sans-serif;cursor:pointer;text-decoration:none;background:none;display:inline-block;}
+
+footer{background:#0D1E30;padding:36px 6%;}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
+.footer-logo{font-family:'Playfair Display',serif;font-size:20px;color:rgba(255,255,255,0.85);text-decoration:none;}
+.footer-logo span{font-size:10px;font-family:'DM Sans',sans-serif;color:rgba(255,255,255,0.3);display:block;letter-spacing:0.12em;text-transform:uppercase;}
+.footer-links{display:flex;gap:24px;}
+.footer-links a{font-size:13px;color:rgba(255,255,255,0.4);text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:white;}
+.footer-copy{font-size:12px;color:rgba(255,255,255,0.25);}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:200;align-items:center;justify-content:center;}
+.modal-overlay.open{display:flex;}
+.modal{background:white;border-radius:16px;padding:40px;width:100%;max-width:420px;margin:16px;position:relative;}
+.modal-logo{font-family:'Playfair Display',serif;font-size:26px;color:var(--marine);margin-bottom:4px;}
+.modal-sub{font-size:13px;color:var(--text-muted);margin-bottom:28px;}
+.m-form-group{margin-bottom:16px;}
+.m-label{font-size:11px;font-weight:500;color:var(--text);display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.06em;}
+.m-input{width:100%;padding:11px 14px;border:1px solid var(--border);border-radius:8px;font-size:14px;font-family:'DM Sans',sans-serif;color:var(--text);background:var(--creme);outline:none;transition:border-color 0.2s;}
+.m-input:focus{border-color:var(--marine);}
+.m-btn{width:100%;padding:13px;background:var(--marine);color:white;border:none;border-radius:8px;font-size:15px;font-family:'DM Sans',sans-serif;font-weight:500;cursor:pointer;margin-top:8px;}
+.modal-footer-note{text-align:center;margin-top:18px;font-size:13px;color:var(--text-muted);}
+.modal-footer-note a{color:var(--marine);text-decoration:none;font-weight:500;}
+.modal-close{position:absolute;top:14px;right:18px;background:none;border:none;font-size:24px;color:var(--text-muted);cursor:pointer;}
+.page-switcher-wrap{display:flex;justify-content:center;padding:28px 0 0;}
+.page-switcher{display:inline-flex;background:rgba(255,255,255,0.12);border-radius:30px;padding:4px;gap:0;}
+.switcher-btn{padding:8px 22px;border-radius:26px;border:none;font-size:13px;font-weight:500;cursor:pointer;transition:all 0.25s;font-family:'DM Sans',sans-serif;background:transparent;color:rgba(255,255,255,0.7);text-decoration:none;display:inline-block;}
+.switcher-btn.active{background:white;color:#1A3A5C;}
+@media(max-width:900px){.feature-block{grid-template-columns:1fr;gap:32px;}.feature-block.reverse{direction:ltr;}.nav-links{display:none;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Josetine<span>Gestion administrative</span></a>
+  <div class="nav-links">
+    <a href="fonctionnalites.html">Fonctionnalités</a>
+    <a href="tarifs.html">Tarifs</a>
+    <a href="faq.html">FAQ</a>
+    <a href="apropos.html">À propos</a>
+  </div>
+  <div class="nav-cta">
+    <a href="#" class="btn-ghost" onclick="openModal('login');return false;">Se connecter</a>
+    <a href="#" class="btn-main" onclick="openModal('signup');return false;">Demander une démo</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <h1>Tout ce qu'il vous faut,<br><em>rien de superflu</em></h1>
+  <p>Découvrez chaque fonctionnalité de Josetine, pensée pour simplifier votre quotidien d'assistante en entreprise.</p>
+  <div class="page-switcher-wrap">
+    <div class="page-switcher">
+      <a href="fonctionnalites.html" class="switcher-btn">Assistante indépendante</a>
+      <span class="switcher-btn active">Assistante en entreprise</span>
+    </div>
+  </div>
+</div>
+
+<div class="clarif-banner">
+  <span class="clarif-icon">🏢</span>
+  <div>
+    <div class="clarif-title">Josetine Entreprise n'est pas un SIRH ou un logiciel de paie.</div>
+    <div class="clarif-text">Vous avez déjà Sage, Silae ou PayFit pour ça. Josetine fait ce qu'ils ne font pas : centraliser le pilotage quotidien de vos entités internes en un seul endroit.</div>
+  </div>
+</div>
+
+<section class="features-section">
+  <div class="features-inner">
+
+    <div class="feature-block">
+      <div>
+        <div class="feature-tag">Gestion par entités</div>
+        <div class="feature-title">Pilotez plusieurs entités depuis un seul espace</div>
+        <div class="feature-desc">Gérez les différentes structures, filiales ou départements de votre entreprise depuis un sélecteur unifié. Chaque entité dispose de sa propre fiche, ses fournisseurs, ses tâches et ses équipes.</div>
+        <ul class="feature-list">
+          <li>Navigation entre entités en un clic</li>
+          <li>Fiche entité complète avec historique</li>
+          <li>Tâches et fournisseurs par entité</li>
+          <li>Vue consolidée sur l'ensemble</li>
+        </ul>
+      </div>
+      <img src="images/screenshot3E.png" alt="Gestion par entités Josetine Entreprise"
+           style="width:100%;border-radius:14px;border:1px solid var(--border);
+                  box-shadow:0 8px 40px rgba(26,58,92,0.08);display:block;">
+    </div>
+
+    <div class="feature-block reverse">
+      <div>
+        <div class="feature-tag">Fournisseurs & accès</div>
+        <div class="feature-title">Tous vos accès fournisseurs, centralisés et sécurisés</div>
+        <div class="feature-desc">Fini la barre de favoris à rallonge et les fichiers Excel avec des mots de passe en clair. Josetine centralise tous les accès fournisseurs directement dans la fiche de chaque entité — identifiants, mots de passe chiffrés, liens d'accès directs — le tout sécurisé et accessible en un clic.</div>
+        <ul class="feature-list">
+          <li>Accès regroupés par entité</li>
+          <li>Mots de passe chiffrés (AES-256)</li>
+          <li>Lien d'accès direct au site fournisseur</li>
+          <li>Code secret pour protéger la consultation</li>
+          <li>Suivi des vérifications périodiques</li>
+        </ul>
+      </div>
+      <img src="images/screenshot1E.png" alt="Accès fournisseurs Josetine Entreprise"
+           style="width:100%;border-radius:14px;border:1px solid var(--border);
+                  box-shadow:0 8px 40px rgba(26,58,92,0.08);display:block;">
+    </div>
+
+    <div class="feature-block">
+      <div>
+        <div class="feature-tag">RH complet</div>
+        <div class="feature-title">Le suivi RH de votre entreprise, sans rien oublier</div>
+        <div class="feature-desc">Gérez les salariés de chaque entité directement depuis leur fiche. Contrats, absences, onboarding, échéances RH — tout est centralisé au même endroit. Plus besoin de jongler entre des tableaux Excel ou de chercher qui est en période d'essai ce mois-ci.</div>
+        <ul class="feature-list">
+          <li>Fiche salarié complète (CDI, CDD, stage, alternance)</li>
+          <li>Suivi des absences (CP, RTT, maladie, formation)</li>
+          <li>Alertes automatiques (fin de période d'essai, visites médicales, entretiens)</li>
+          <li>Checklist d'onboarding et offboarding personnalisable</li>
+          <li>Export PDF des absences</li>
+        </ul>
+      </div>
+      <img src="images/screenshot4E.png" alt="Module RH Josetine Entreprise"
+           style="width:100%;border-radius:14px;border:1px solid var(--border);
+                  box-shadow:0 8px 40px rgba(26,58,92,0.08);display:block;">
+    </div>
+
+    <div class="feature-block reverse">
+      <div>
+        <div class="feature-tag">Contentieux & litiges</div>
+        <div class="feature-title">Suivez vos litiges et contentieux sans perdre le fil</div>
+        <div class="feature-desc">Centralisez tous vos dossiers de contentieux et litiges par entité. Dates d'audience, parties concernées, statuts et documents — tout est accessible et à jour en permanence.</div>
+        <ul class="feature-list">
+          <li>Fiche contentieux détaillée par entité</li>
+          <li>Suivi des étapes et statuts</li>
+          <li>Dates d'audience intégrées à l'agenda</li>
+          <li>Pièces jointes et documents centralisés</li>
+        </ul>
+      </div>
+      <img src="images/screenshot2E.png" alt="Contentieux Josetine Entreprise"
+           style="width:100%;border-radius:14px;border:1px solid var(--border);
+                  box-shadow:0 8px 40px rgba(26,58,92,0.08);display:block;">
+    </div>
+
+  </div>
+</section>
+
+<section class="cta-band">
+  <h2>Prête à découvrir le plan Entreprise ?</h2>
+  <p>25 € HT/mois, sans engagement. Onboarding dédié inclus.</p>
+  <div class="cta-btns">
+    <a href="#" class="btn-cta-white" onclick="openModal('signup');return false;">Demander une démo</a>
+    <a href="tarifs.html" class="btn-cta-outline">Voir les tarifs</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <a href="index.html" class="footer-logo">Josetine<span>Gestion administrative</span></a>
+    <div class="footer-links">
+      <a href="fonctionnalites.html">Fonctionnalités</a>
+      <a href="tarifs.html">Tarifs</a>
+      <a href="faq.html">FAQ</a>
+      <a href="apropos.html">À propos</a>
+      <a href="#">CGU</a>
+    </div>
+    <div class="footer-copy">© 2026 Josetine · Fait avec passion</div>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="loginModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('login')">×</button>
+    <div class="modal-logo">Josetine</div>
+    <div class="modal-sub">Connectez-vous à votre espace</div>
+    <div class="m-form-group"><label class="m-label">Email</label><input type="email" class="m-input" placeholder="votre@email.fr"></div>
+    <div class="m-form-group"><label class="m-label">Mot de passe</label><input type="password" class="m-input" placeholder="••••••••"></div>
+    <button class="m-btn" onclick="window.location.href='https://app.martines.app'">Se connecter</button>
+    <div class="modal-footer-note">Pas encore de compte ? <a href="#" onclick="switchModal('login','signup');return false;">Créer un compte</a></div>
+  </div>
+</div>
+<div class="modal-overlay" id="signupModal">
+  <div class="modal" id="signup-modal-inner">
+    <button class="modal-close" onclick="closeModal('signup')">×</button>
+    <div class="modal-logo">Josetine</div>
+    <div class="modal-sub">Demander une démo Entreprise</div>
+    <div class="m-form-group"><label class="m-label">Prénom</label><input type="text" id="signup-prenom" class="m-input" placeholder="Marie"></div>
+    <div class="m-form-group"><label class="m-label">Nom</label><input type="text" id="signup-nom" class="m-input" placeholder="Martin"></div>
+    <div class="m-form-group"><label class="m-label">Email</label><input type="email" id="signup-email" class="m-input" placeholder="marie@email.fr"></div>
+    <div id="signup-error" style="font-size:13px;color:#c0392b;margin-bottom:8px;min-height:18px"></div>
+    <button class="m-btn" onclick="submitWaitingList()">Demander une démo</button>
+    <div class="modal-footer-note">Déjà un compte ? <a href="#" onclick="switchModal('signup','login');return false;">Se connecter</a></div>
+  </div>
+</div>
+<script>
+function openModal(t){document.getElementById(t+'Modal').classList.add('open');}
+function closeModal(t){document.getElementById(t+'Modal').classList.remove('open');}
+function switchModal(a,b){closeModal(a);setTimeout(()=>openModal(b),100);}
+document.querySelectorAll('.modal-overlay').forEach(m=>{m.addEventListener('click',function(e){if(e.target===this)this.classList.remove('open');});});
+
+async function submitWaitingList() {
+  const prenom = (document.getElementById('signup-prenom')?.value || '').trim();
+  const nom    = (document.getElementById('signup-nom')?.value    || '').trim();
+  const email  = (document.getElementById('signup-email')?.value  || '').trim();
+  const errEl  = document.getElementById('signup-error');
+  if (errEl) errEl.textContent = '';
+  if (!prenom || !nom || !email) {
+    if (errEl) errEl.textContent = 'Veuillez remplir tous les champs.';
+    return;
+  }
+  try {
+    const r = await fetch('https://www.martines.app/api/liste-attente', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ prenom, nom, email, type_compte: 'entreprise' }),
+    });
+    const data = await r.json().catch(() => ({}));
+    if (r.ok) {
+      document.getElementById('signup-modal-inner').innerHTML = `
+        <div style="text-align:center;padding:24px 0">
+          <div style="font-size:2.5rem;margin-bottom:16px">🎉</div>
+          <div class="modal-logo">Josetine</div>
+          <p style="margin-top:16px;font-size:1rem;color:var(--text);line-height:1.7;max-width:300px;margin-left:auto;margin-right:auto">
+            Merci&nbsp;! Nous vous contacterons très bientôt pour organiser votre démo.
+          </p>
+          <button class="m-btn" style="margin-top:24px" onclick="closeModal('signup')">Fermer</button>
+        </div>`;
+    } else {
+      if (errEl) errEl.textContent = data.error || 'Une erreur est survenue, réessayez.';
+    }
+  } catch (e) {
+    if (errEl) errEl.textContent = 'Impossible de se connecter. Réessayez.';
+  }
+}
+</script>
+</body>
+</html>
