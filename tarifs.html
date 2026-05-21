@@ -61,8 +61,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,245,
 .plan-entreprise{border:2px solid #1A3A5C;}
 .plan-entreprise:hover{box-shadow:0 8px 32px rgba(26,58,92,0.1);}
 .plan-entreprise .check{color:#1A3A5C;}
-.plan-entreprise .plan-btn a{background:#1A3A5C;color:white;border:none;}
-.plan-entreprise .plan-btn a:hover{background:#0D2540;}
+.plan-entreprise-btn a{display:block;text-align:center;padding:12px;border-radius:9px;font-size:14px;font-weight:500;text-decoration:none;transition:all 0.2s;font-family:'DM Sans',sans-serif;background:#1A3A5C;color:white;border:none;}
+.plan-entreprise-btn a:hover{background:#0D2540;}
 
 .faq{padding:0 6% 80px;}
 .faq-inner{max-width:800px;margin:0 auto;}
@@ -143,65 +143,72 @@ footer{background:#2C1018;padding:36px 6%;}
     </div>
 
     <div class="plans">
+
       <div class="plan">
+        <div style="text-align:center;margin-bottom:10px"><span style="background:#6B1F30;color:white;font-size:12px;font-weight:500;padding:4px 12px;border-radius:20px">🎁 30 jours gratuits</span></div>
         <div class="plan-name">Découverte</div>
-        <div class="plan-tagline">Pour tester sans engagement</div>
-        <div class="plan-price">0 €<sub> / mois</sub></div>
-        <div class="plan-period">Gratuit pour toujours</div>
+        <div class="plan-tagline">Pour démarrer en douceur</div>
+        <div class="plan-price" id="p-dec">9 € HT<sub> / mois</sub></div>
+        <div class="plan-period" id="per-dec">Facturé 108 € HT/an</div>
         <hr class="plan-divider">
         <div class="plan-section-label">Inclus</div>
-        <div class="plan-feature"><span class="check">✓</span>1 utilisateur</div>
+        <div class="plan-feature"><span class="check">✓</span>1 utilisatrice</div>
         <div class="plan-feature"><span class="check">✓</span>3 clients maximum</div>
+        <div class="plan-feature"><span class="check">✓</span>5 fournisseurs / client</div>
         <div class="plan-feature"><span class="check">✓</span>Tableau de bord</div>
         <div class="plan-feature"><span class="check">✓</span>Gestion des tâches</div>
-        <div class="plan-feature"><span class="check">✓</span>5 fournisseurs / client</div>
+        <div class="plan-feature"><span class="check">✓</span>Suivi vérifications fournisseurs</div>
         <div class="plan-feature off"><span class="check" style="color:#ccc">✗</span>Agenda intégré</div>
         <div class="plan-feature off"><span class="check" style="color:#ccc">✗</span>Suivi facturation</div>
+        <div class="plan-feature off"><span class="check" style="color:#ccc">✗</span>Suivi du temps</div>
         <div class="plan-feature off"><span class="check" style="color:#ccc">✗</span>Module commercial</div>
-        <div class="plan-btn btn-outline-plan"><a href="#" onclick="openSignupForPlan('Découverte');return false;">Commencer gratuitement</a></div>
+        <div class="plan-feature off"><span class="check" style="color:#ccc">✗</span>Exports PDF / Excel</div>
+        <div class="plan-btn btn-outline-plan"><a href="#" onclick="openSignupForPlan('Découverte');return false;">Commencer l'essai</a></div>
+        <p style="text-align:center;font-size:12px;color:#888;margin-top:10px;line-height:1.6">30 jours gratuits, sans carte bancaire</p>
       </div>
 
       <div class="plan featured">
-        <div style="text-align:center;margin-bottom:10px"><span style="background:#6B1F30;color:white;font-size:12px;font-weight:500;padding:4px 12px;border-radius:20px">🎁 15 jours gratuits</span></div>
+        <div style="text-align:center;margin-bottom:10px"><span style="background:#6B1F30;color:white;font-size:12px;font-weight:500;padding:4px 12px;border-radius:20px">🎁 30 jours gratuits</span></div>
         <div class="plan-badge">Le plus populaire</div>
         <div class="plan-name">Indépendant</div>
-        <div class="plan-tagline">Pour les freelances et indépendantes</div>
+        <div class="plan-tagline">Pour les assistantes indépendantes actives</div>
         <div class="plan-price" id="p-ind">29 € HT<sub> / mois</sub></div>
         <div class="plan-period" id="per-ind">puis 29€ HT/mois — sans engagement</div>
         <hr class="plan-divider">
         <div class="plan-section-label">Tout Découverte, plus :</div>
-        <div class="plan-feature"><span class="check">✓</span>2 utilisateurs</div>
+        <div class="plan-feature"><span class="check">✓</span>2 utilisatrices</div>
         <div class="plan-feature"><span class="check">✓</span>10 clients maximum</div>
         <div class="plan-feature"><span class="check">✓</span>Agenda intégré</div>
         <div class="plan-feature"><span class="check">✓</span>Suivi facturation complet</div>
-        <div class="plan-feature"><span class="check">✓</span>Fournisseurs & échéances</div>
         <div class="plan-feature"><span class="check">✓</span>Suivi du temps</div>
+        <div class="plan-feature"><span class="check">✓</span>Fournisseurs &amp; échéances</div>
         <div class="plan-feature"><span class="check">✓</span>Module commercial</div>
         <div class="plan-feature"><span class="check">✓</span>Exports PDF / Excel</div>
         <div class="plan-feature"><span class="check">✓</span>Google Calendar</div>
-        <div class="plan-btn btn-fill-plan"><a href="https://app.josetine.app/inscription?plan=independant">Démarrer mon essai gratuit</a></div>
-        <p style="text-align:center;font-size:12px;color:#888;margin-top:10px;line-height:1.6">✓ Sans carte bancaire · ✓ Accès immédiat · ✓ 15 jours offerts</p>
+        <div class="plan-btn btn-fill-plan"><a href="https://app.josetine.app/inscription?plan=independant">Démarrer mon essai</a></div>
+        <p style="text-align:center;font-size:12px;color:#888;margin-top:10px;line-height:1.6">30 jours gratuits, sans carte bancaire</p>
       </div>
 
       <div class="plan">
+        <div style="text-align:center;margin-bottom:10px"><span style="background:#6B1F30;color:white;font-size:12px;font-weight:500;padding:4px 12px;border-radius:20px">🎁 30 jours gratuits</span></div>
         <div class="plan-name">Studio</div>
         <div class="plan-tagline">Pour les petites équipes</div>
         <div class="plan-price" id="p-stu">45 € HT<sub> / mois</sub></div>
         <div class="plan-period" id="per-stu">Facturé 540 € HT/an</div>
         <hr class="plan-divider">
         <div class="plan-section-label">Tout Indépendant, plus :</div>
-        <div class="plan-feature"><span class="check">✓</span>Utilisateurs illimités</div>
+        <div class="plan-feature"><span class="check">✓</span>Utilisatrices illimitées</div>
         <div class="plan-feature"><span class="check">✓</span>Clients illimités</div>
-        <div class="plan-feature"><span class="check">✓</span>Google Calendar</div>
         <div class="plan-feature"><span class="check">✓</span>Support prioritaire</div>
         <div class="plan-btn btn-outline-plan"><a href="#" onclick="openSignupForPlan('Studio');return false;">Choisir ce plan</a></div>
+        <p style="text-align:center;font-size:12px;color:#888;margin-top:10px;line-height:1.6">30 jours gratuits, sans carte bancaire</p>
       </div>
 
       <div class="plan plan-entreprise">
         <div class="plan-name">Entreprise</div>
         <div class="plan-tagline">Pour les assistantes salariées en entreprise</div>
-        <div class="plan-price" id="p-ent">49 € HT<sub> / mois</sub></div>
-        <div class="plan-period" id="per-ent">Facturé 588 € HT/an</div>
+        <div class="plan-price">49 € HT<sub> / mois</sub></div>
+        <div class="plan-period">Sans engagement · Facture mensuelle</div>
         <hr class="plan-divider">
         <div class="plan-section-label">Inclus</div>
         <div class="plan-feature"><span class="check">✓</span>Interface dédiée assistante salariée</div>
@@ -212,8 +219,9 @@ footer{background:#2C1018;padding:36px 6%;}
         <div class="plan-feature"><span class="check">✓</span>Module contentieux &amp; litiges</div>
         <div class="plan-feature"><span class="check">✓</span>Agenda intégré</div>
         <div class="plan-feature"><span class="check">✓</span>Documentation interne</div>
-        <div class="plan-btn btn-outline-plan"><a href="#" onclick="openSignupForPlan('Entreprise');return false;">Nous contacter</a></div>
+        <div class="plan-btn plan-entreprise-btn"><a href="#" onclick="openSignupForPlan('Entreprise');return false;">Demander une démo</a></div>
       </div>
+
     </div>
 
     <div style="text-align:center;font-size:13px;color:var(--text-light);margin-bottom:8px;">
@@ -398,7 +406,7 @@ function toggleBilling(){
   thumb.className='toggle-thumb'+(annual?' right':'');
   document.getElementById('label-monthly').className='toggle-label'+(annual?'':' on');
   document.getElementById('label-annual').className='toggle-label'+(annual?' on':'');
-  const data={ind:[29,23.2],stu:[45,36],ent:[49,39.2]};
+  const data={dec:[9,7.2],ind:[29,23.2],stu:[45,36]};
   for(const[k,[m,a]] of Object.entries(data)){
     const p=annual?a:m;
     document.getElementById('p-'+k).innerHTML=p+' € HT<sub> / mois</sub>';
