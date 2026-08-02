@@ -365,7 +365,7 @@ async function submitWaitingListWithPlan() {
   }
   const typeCompte = _selectedType;
   try {
-    const r = await fetch('https://www.martines.app/api/liste-attente', {
+    const r = await fetch('https://app.martines.app/api/liste-attente', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

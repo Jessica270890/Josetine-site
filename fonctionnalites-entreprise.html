@@ -254,7 +254,7 @@ async function submitWaitingList() {
     return;
   }
   try {
-    const r = await fetch('https://www.martines.app/api/liste-attente', {
+    const r = await fetch('https://app.martines.app/api/liste-attente', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ prenom, nom, email, type_compte: 'entreprise' }),
