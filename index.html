@@ -137,7 +137,8 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
   align-items: center;
   gap: 8px;
 }
-.hero-feat-icon { font-size: 18px; }
+.hero-feat-icon { display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:8px;background:rgba(107,31,48,0.08);color:var(--bordeaux); }
+.hero-feat-icon svg { width:16px;height:16px; }
 .hero-feat-text { font-size: 16px; color: #333; }
 .btn-hero-secondary {
   display: inline-block;
@@ -240,13 +241,15 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 
 /* HERO POSITIONING NOTE */
 .hero-positioning{background:rgba(255,255,255,0.08);border-left:3px solid rgba(255,255,255,0.25);border-radius:8px;padding:10px 14px;margin-top:20px;margin-bottom:20px;max-width:420px;display:flex;align-items:flex-start;gap:10px;}
-.hero-positioning-icon{font-size:15px;color:rgba(255,255,255,0.6);flex-shrink:0;margin-top:1px;}
+.hero-positioning-icon{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:8px;background:rgba(255,255,255,0.14);color:#fff;flex-shrink:0;}
+.hero-positioning-icon svg{width:15px;height:15px;}
 .hero-positioning-title{font-size:13px;font-weight:500;color:white;margin-bottom:3px;}
 
 /* TRUST BAR */
 .trust-bar { background: #F9F5F3; display: grid; grid-template-columns: repeat(4,1fr); padding: 16px 60px; border-bottom: 1px solid rgba(107,31,48,0.1); }
 .trust-item { display: flex; align-items: center; gap: 12px; padding: 12px 0; }
-.trust-icon { font-size: 22px; flex-shrink: 0; }
+.trust-icon { display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;background:rgba(107,31,48,0.08);color:var(--bordeaux);flex-shrink:0; }
+.trust-icon svg { width:18px;height:18px; }
 .trust-label { font-size: 14px; font-weight: 500; color: #2C2018; }
 .trust-sub { font-size: 12px; color: #7A6E68; margin-top: 2px; }
 
@@ -258,7 +261,8 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .pain-title { font-family: 'Playfair Display', serif; font-size: clamp(26px, 2.8vw, 38px); font-weight: 500; color: var(--text); line-height: 1.25; }
 .pain-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
 .pain-card { background: #F9F5F3; border-radius: 12px; padding: 28px; }
-.pain-card-icon { font-size: 28px; margin-bottom: 14px; display: block; }
+.pain-card-icon { display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:8px;background:rgba(107,31,48,0.08);color:var(--bordeaux);margin-bottom:14px; }
+.pain-card-icon svg { width:22px;height:22px; }
 .pain-card-title { font-size: 17px; font-weight: 500; color: var(--text); margin-bottom: 10px; line-height: 1.3; }
 .pain-card-text { font-size: 14px; color: var(--text-muted); line-height: 1.7; font-weight: 300; }
 
@@ -380,7 +384,7 @@ footer { background: #2C1018; padding: 36px 6%; }
       <h1 id="hero-h1">Le logiciel <em>Tout en 1</em><br>pour les assistantes<br>indépendantes qui permet<br>de <em>piloter vos clients</em></h1>
       <p class="hero-sub">Arrêtez de jongler entre vos outils. Josetine centralise tout ce qu'il vous faut pour piloter chaque client — en un clin d'œil.</p>
       <div class="hero-positioning">
-        <span class="hero-positioning-icon">⚡</span>
+        <span class="hero-positioning-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z"/></svg></span>
         <div>
           <div class="hero-positioning-title">Josetine n'est pas (encore) un outil de facturation, mais suit votre rentabilité et prépare vos montants à facturer. La facturation électronique arrive : Josetine s'y prépare. En attendant, continuez avec votre logiciel habituel pour éditer vos factures.</div>
         </div>
@@ -415,12 +419,12 @@ footer { background: #2C1018; padding: 36px 6%; }
     </div>
     <div class="hero-features">
       <div class="hero-feat-grid">
-        <div class="hero-feat"><span class="hero-feat-icon">👥</span><span class="hero-feat-text">Base clients & fiches</span></div>
-        <div class="hero-feat"><span class="hero-feat-icon">🔑</span><span class="hero-feat-text">Suivi fournisseurs</span></div>
-        <div class="hero-feat"><span class="hero-feat-icon">📅</span><span class="hero-feat-text">Échéances & contrats</span></div>
-        <div class="hero-feat"><span class="hero-feat-icon">👤</span><span class="hero-feat-text">RH salariés</span></div>
-        <div class="hero-feat"><span class="hero-feat-icon">⏱</span><span class="hero-feat-text">Chronomètre</span></div>
-        <div class="hero-feat"><span class="hero-feat-icon">📊</span><span class="hero-feat-text">Rentabilité</span></div>
+        <div class="hero-feat"><span class="hero-feat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg></span><span class="hero-feat-text">Base clients & fiches</span></div>
+        <div class="hero-feat"><span class="hero-feat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"/><circle cx="16.5" cy="7.5" r=".5" fill="currentColor"/></svg></span><span class="hero-feat-text">Suivi fournisseurs</span></div>
+        <div class="hero-feat"><span class="hero-feat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v3"/><path d="M16 2v3"/><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg></span><span class="hero-feat-text">Échéances & contrats</span></div>
+        <div class="hero-feat"><span class="hero-feat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span><span class="hero-feat-text">RH salariés</span></div>
+        <div class="hero-feat"><span class="hero-feat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/></svg></span><span class="hero-feat-text">Chronomètre</span></div>
+        <div class="hero-feat"><span class="hero-feat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></span><span class="hero-feat-text">Rentabilité</span></div>
       </div>
       <a href="fonctionnalites.html" class="btn-hero-secondary">Voir toutes les fonctionnalités →</a>
     </div>
@@ -429,28 +433,28 @@ footer { background: #2C1018; padding: 36px 6%; }
 
 <div class="trust-bar" id="trust-bar">
   <div class="trust-item">
-    <span class="trust-icon">🔒</span>
+    <span class="trust-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
     <div>
       <div class="trust-label">Données sécurisées</div>
       <div class="trust-sub">Chiffrement AES-256</div>
     </div>
   </div>
   <div class="trust-item">
-    <span class="trust-icon">📍</span>
+    <span class="trust-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></span>
     <div>
       <div class="trust-label">Hébergé en Europe</div>
       <div class="trust-sub">Serveurs Railway EU</div>
     </div>
   </div>
   <div class="trust-item">
-    <span class="trust-icon">💳</span>
+    <span class="trust-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg></span>
     <div>
       <div class="trust-label">Sans carte bancaire</div>
       <div class="trust-sub">Démarrez gratuitement</div>
     </div>
   </div>
   <div class="trust-item">
-    <span class="trust-icon">↩</span>
+    <span class="trust-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1-5.5 5.5H11"/></svg></span>
     <div>
       <div class="trust-label">Sans engagement</div>
       <div class="trust-sub">Résiliation à tout moment</div>
@@ -466,17 +470,17 @@ footer { background: #2C1018; padding: 36px 6%; }
     </div>
     <div class="pain-grid">
       <div class="pain-card">
-        <span class="pain-card-icon">🗂️</span>
+        <span class="pain-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2"/></svg></span>
         <div class="pain-card-title">Vous gérez plusieurs clients</div>
         <div class="pain-card-text">Et vous jonglez entre des dizaines d'onglets, d'outils et de tableaux Excel pour tout suivre.</div>
       </div>
       <div class="pain-card">
-        <span class="pain-card-icon">⏰</span>
+        <span class="pain-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M5 3 2 6"/><path d="m22 6-3-3"/><path d="M6.38 18.7 4 21"/><path d="M17.64 18.67 20 21"/></svg></span>
         <div class="pain-card-title">Vous oubliez des échéances</div>
         <div class="pain-card-text">Dates de renouvellement, fins de contrat, visites médicales... rien ne devrait passer entre les mailles.</div>
       </div>
       <div class="pain-card">
-        <span class="pain-card-icon">📊</span>
+        <span class="pain-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></span>
         <div class="pain-card-title">Vous ne savez pas si vous êtes rentable</div>
         <div class="pain-card-text">Temps passé, forfaits dépassés, heures non facturées... Josetine calcule tout en temps réel.</div>
       </div>
@@ -586,16 +590,19 @@ const MODES = {
     imgLeft: { src: 'images/screenshot4.png', alt: 'Suivi facturation Josetine' },
     imgRight: { src: 'images/screenshot5.png', alt: 'Agenda Josetine' },
     feats: [
-      { icon: '👥', text: 'Base clients & fiches' }, { icon: '🔑', text: 'Suivi fournisseurs' },
-      { icon: '📅', text: 'Échéances & contrats' }, { icon: '👤', text: 'RH salariés' },
-      { icon: '⏱', text: 'Chronomètre' }, { icon: '📊', text: 'Rentabilité' },
+      { icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>', text: 'Base clients & fiches' },
+      { icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"/><circle cx="16.5" cy="7.5" r=".5" fill="currentColor"/></svg>', text: 'Suivi fournisseurs' },
+      { icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v3"/><path d="M16 2v3"/><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>', text: 'Échéances & contrats' },
+      { icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>', text: 'RH salariés' },
+      { icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/></svg>', text: 'Chronomètre' },
+      { icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>', text: 'Rentabilité' },
     ],
     featBtn: { href: 'fonctionnalites.html', text: 'Voir toutes les fonctionnalités →' },
     trust: [
-      { icon: '🔒', label: 'Données sécurisées', sub: 'Chiffrement AES-256' },
-      { icon: '📍', label: 'Hébergé en Europe', sub: 'Serveurs Railway EU' },
-      { icon: '💳', label: 'Sans carte bancaire', sub: 'Démarrez gratuitement' },
-      { icon: '↩', label: 'Sans engagement', sub: 'Résiliation à tout moment' },
+      { icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>', label: 'Données sécurisées', sub: 'Chiffrement AES-256' },
+      { icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>', label: 'Hébergé en Europe', sub: 'Serveurs Railway EU' },
+      { icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>', label: 'Sans carte bancaire', sub: 'Démarrez gratuitement' },
+      { icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1-5.5 5.5H11"/></svg>', label: 'Sans engagement', sub: 'Résiliation à tout moment' },
     ],
     trustBg: '#F9F5F3',
     navBtnText: 'Essai gratuit', navBtnBg: '#6B1E35',
@@ -603,9 +610,9 @@ const MODES = {
     pain: {
       title: 'Vous vous reconnaissez dans l\'une de ces situations ?',
       cards: [
-        { icon: '🗂️', title: 'Vous gérez plusieurs clients', text: 'Et vous jonglez entre des dizaines d\'onglets, d\'outils et de tableaux Excel pour tout suivre.' },
-        { icon: '⏰', title: 'Vous oubliez des échéances', text: 'Dates de renouvellement, fins de contrat, visites médicales... rien ne devrait passer entre les mailles.' },
-        { icon: '📊', title: 'Vous ne savez pas si vous êtes rentable', text: 'Temps passé, forfaits dépassés, heures non facturées... Josetine calcule tout en temps réel.' },
+        { icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2"/></svg>', title: 'Vous gérez plusieurs clients', text: 'Et vous jonglez entre des dizaines d\'onglets, d\'outils et de tableaux Excel pour tout suivre.' },
+        { icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M5 3 2 6"/><path d="m22 6-3-3"/><path d="M6.38 18.7 4 21"/><path d="M17.64 18.67 20 21"/></svg>', title: 'Vous oubliez des échéances', text: 'Dates de renouvellement, fins de contrat, visites médicales... rien ne devrait passer entre les mailles.' },
+        { icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>', title: 'Vous ne savez pas si vous êtes rentable', text: 'Temps passé, forfaits dépassés, heures non facturées... Josetine calcule tout en temps réel.' },
       ],
     },
     why: {
@@ -667,7 +674,7 @@ function setHeroMode(mode) {
     const items = trustBar.querySelectorAll('.trust-item');
     m.trust.forEach((t, i) => {
       if (!items[i]) return;
-      items[i].querySelector('.trust-icon').textContent = t.icon;
+      items[i].querySelector('.trust-icon').innerHTML = t.icon;
       items[i].querySelector('.trust-label').textContent = t.label;
       items[i].querySelector('.trust-sub').textContent = t.sub;
     });
