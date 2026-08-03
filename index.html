@@ -242,7 +242,6 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .hero-positioning{background:rgba(255,255,255,0.08);border-left:3px solid rgba(255,255,255,0.25);border-radius:8px;padding:10px 14px;margin-top:20px;margin-bottom:20px;max-width:420px;display:flex;align-items:flex-start;gap:10px;}
 .hero-positioning-icon{font-size:15px;color:rgba(255,255,255,0.6);flex-shrink:0;margin-top:1px;}
 .hero-positioning-title{font-size:13px;font-weight:500;color:white;margin-bottom:3px;}
-.hero-positioning-text{font-size:12px;color:rgba(255,255,255,0.6);line-height:1.55;}
 
 /* TRUST BAR */
 .trust-bar { background: #F9F5F3; display: grid; grid-template-columns: repeat(4,1fr); padding: 16px 60px; border-bottom: 1px solid rgba(107,31,48,0.1); }
@@ -383,8 +382,7 @@ footer { background: #2C1018; padding: 36px 6%; }
       <div class="hero-positioning">
         <span class="hero-positioning-icon">⚡</span>
         <div>
-          <div class="hero-positioning-title">Josetine n'est pas un logiciel de facturation.</div>
-          <div class="hero-positioning-text">Vous avez déjà Abby, Axonaut ou Pennylane pour ça.</div>
+          <div class="hero-positioning-title">Josetine n'est pas (encore) un outil de facturation, mais suit votre rentabilité et prépare vos montants à facturer. La facturation électronique arrive : Josetine s'y prépare. En attendant, continuez avec votre logiciel habituel pour éditer vos factures.</div>
         </div>
       </div>
     </div>
@@ -578,8 +576,7 @@ const MODES = {
     heroBg: '#6B1E35',
     h1: 'Le logiciel <em>Tout en 1</em><br>pour les assistantes<br>indépendantes qui permet<br>de <em>piloter vos clients</em>',
     sub: "Arrêtez de jongler entre vos outils. Josetine centralise tout ce qu'il vous faut pour piloter chaque client — en un clin d'œil.",
-    posTitle: "Josetine n'est pas un logiciel de facturation.",
-    posText: 'Vous avez déjà Abby, Axonaut ou Pennylane pour ça.',
+    posTitle: "Josetine n'est pas (encore) un outil de facturation, mais suit votre rentabilité et prépare vos montants à facturer. La facturation électronique arrive : Josetine s'y prépare. En attendant, continuez avec votre logiciel habituel pour éditer vos factures.",
     ctaIntro: 'Testez le plan Indépendant 15 jours.<br>Aucune carte bancaire requise.',
     ctaBtnText: 'Démarrer l\'essai gratuit — 15 jours',
     ctaBtnHref: '#',
@@ -644,7 +641,6 @@ function setHeroMode(mode) {
     document.querySelector('.hero-sub').textContent = m.sub;
     // positioning note
     document.querySelector('.hero-positioning-title').textContent = m.posTitle;
-    document.querySelector('.hero-positioning-text').textContent = m.posText;
     // screenshots
     const imgM = document.getElementById('img-main');
     imgM.src = m.imgMain.src; imgM.alt = m.imgMain.alt;
