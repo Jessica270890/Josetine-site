@@ -1,0 +1,89 @@
+/* ============================================
+   MENU MOBILE — partagé sur les 5 pages
+   Seuil : 900px (aligné sur .nav-links existant)
+   ============================================ */
+
+.nav-burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.nav-burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--bordeaux);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+.nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-burger.open span:nth-child(2) { opacity: 0; }
+.nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-menu {
+  position: fixed;
+  top: 66px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 150;
+  background: var(--creme);
+  display: flex;
+  flex-direction: column;
+  padding: 12px 6% 32px;
+  overflow-y: auto;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.mobile-menu.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.mobile-menu a {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text);
+  text-decoration: none;
+  padding: 18px 4px;
+  border-bottom: 1px solid var(--border);
+}
+.mobile-menu a.active { color: var(--bordeaux); }
+
+.mobile-menu-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 28px;
+}
+.mobile-menu-cta a {
+  border-bottom: none;
+  padding: 14px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 15px;
+}
+.mobile-menu-cta .btn-ghost { border: 1px solid var(--border); }
+.mobile-menu-cta .btn-main { background: var(--bordeaux); color: white; }
+
+body.menu-open { overflow: hidden; }
+
+@media (max-width: 900px) {
+  .nav-links, .nav-cta { display: none; }
+  .nav-burger { display: flex; }
+}
+@media (min-width: 901px) {
+  .mobile-menu { display: none; }
+}

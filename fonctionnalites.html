@@ -104,6 +104,7 @@ footer{background:#2C1018;padding:36px 6%;}
 .modal-close{position:absolute;top:14px;right:18px;background:none;border:none;font-size:24px;color:var(--text-muted);cursor:pointer;}
 @media(max-width:900px){.feature-block{grid-template-columns:1fr;gap:32px;}.feature-block.reverse{direction:ltr;}.nav-links{display:none;}}
 </style>
+<link rel="stylesheet" href="mobile-nav.css">
 </head>
 <body>
 <nav>
@@ -118,7 +119,21 @@ footer{background:#2C1018;padding:36px 6%;}
     <a href="#" class="btn-ghost" onclick="openModal('login');return false;">Se connecter</a>
     <a href="#" class="btn-main" onclick="openModal('signup');return false;">Essai gratuit</a>
   </div>
+  <button class="nav-burger" id="navBurger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="fonctionnalites.html" class="active">Fonctionnalités</a>
+  <a href="tarifs.html">Tarifs</a>
+  <a href="faq.html">FAQ</a>
+  <a href="apropos.html">À propos</a>
+  <div class="mobile-menu-cta">
+    <a href="#" class="btn-ghost" onclick="openModal('login');return false;">Se connecter</a>
+    <a href="#" class="btn-main" onclick="openModal('signup');return false;">Essai gratuit</a>
+  </div>
+</div>
 
 <div class="page-hero">
   <h1>Tout ce qu'il vous faut,<br><em>rien de superflu</em></h1>
@@ -307,6 +322,7 @@ footer{background:#2C1018;padding:36px 6%;}
     <div class="modal-footer-note">Déjà un compte ? <a href="#" onclick="switchModal('signup','login');return false;">Se connecter</a></div>
   </div>
 </div>
+<script src="mobile-nav.js"></script>
 <script>
 function openModal(t){document.getElementById(t+'Modal').classList.add('open');}
 function closeModal(t){document.getElementById(t+'Modal').classList.remove('open');}

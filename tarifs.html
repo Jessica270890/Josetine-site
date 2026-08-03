@@ -101,6 +101,7 @@ footer{background:#2C1018;padding:36px 6%;}
 @media(max-width:900px){.plans{grid-template-columns:1fr 1fr;}.nav-links{display:none;}}
 @media(max-width:600px){.plans{grid-template-columns:1fr;}}
 </style>
+<link rel="stylesheet" href="mobile-nav.css">
 </head>
 <body>
 <nav>
@@ -115,7 +116,21 @@ footer{background:#2C1018;padding:36px 6%;}
     <a href="#" class="btn-ghost" onclick="openModal('login');return false;">Se connecter</a>
     <a href="#" class="btn-main" onclick="openModal('signup');return false;">Essai gratuit</a>
   </div>
+  <button class="nav-burger" id="navBurger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="fonctionnalites.html">Fonctionnalités</a>
+  <a href="tarifs.html" class="active">Tarifs</a>
+  <a href="faq.html">FAQ</a>
+  <a href="apropos.html">À propos</a>
+  <div class="mobile-menu-cta">
+    <a href="#" class="btn-ghost" onclick="openModal('login');return false;">Se connecter</a>
+    <a href="#" class="btn-main" onclick="openModal('signup');return false;">Essai gratuit</a>
+  </div>
+</div>
 
 <div class="page-hero">
   <h1>Un plan pour chaque étape<br><em>de votre activité</em></h1>
@@ -288,6 +303,7 @@ footer{background:#2C1018;padding:36px 6%;}
   </div>
 </div>
 
+<script src="mobile-nav.js"></script>
 <script>
 let _selectedPlan = '';
 let _selectedType = '';
