@@ -317,10 +317,32 @@ footer { background: #2C1018; padding: 36px 6%; }
 .hero-top, .hero-bottom { transition: opacity 0.3s ease; }
 
 @media (max-width: 900px) {
-  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .hero { margin-top: 66px; }
+  .hero-top {
+    grid-template-columns: 1fr;
+    padding: 48px 6% 40px;
+    min-height: auto;
+    row-gap: 40px;
+  }
+  .hero-left { padding-right: 0; }
+  .hero h1 { margin-bottom: 24px; }
+  .hero-sub { font-size: 17px; max-width: 100%; }
+  .screenshots-wrapper { flex: none; aspect-ratio: 1 / 1.05; }
+
+  .hero-bottom { grid-template-columns: 1fr; min-height: auto; }
+  .hero-cta { padding: 28px 6%; }
+  .hero-features { padding: 28px 6% 32px; border-top: 1px solid rgba(0,0,0,0.06); }
+
+  .trust-bar { grid-template-columns: repeat(2,1fr); padding: 16px 6%; }
+  .pain-grid { grid-template-columns: 1fr; }
   .why-grid { grid-template-columns: 1fr; }
-  .form-row { grid-template-columns: 1fr; }
   .nav-links { display: none; }
+}
+
+@media (max-width: 600px) {
+  .hero-feat-grid { grid-template-columns: 1fr; }
+  .hero-feat-text { font-size: 15px; }
+  .trust-bar { grid-template-columns: 1fr; }
 }
 </style>
 <link rel="stylesheet" href="mobile-nav.css">
