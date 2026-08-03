@@ -315,17 +315,6 @@ footer { background: #2C1018; padding: 36px 6%; }
 /* HERO MODE SWITCHER */
 .hero { transition: background-color 0.4s ease; }
 .hero-top, .hero-bottom { transition: opacity 0.3s ease; }
-.hero-switcher-wrap { display: flex; justify-content: center; padding: 32px 0 0; }
-.hero-switcher { display: inline-flex; background: rgba(255,255,255,0.12); border-radius: 30px; padding: 4px; gap: 0; }
-.switcher-btn { padding: 8px 22px; border-radius: 26px; border: none; font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.25s; font-family: 'DM Sans', sans-serif; background: transparent; color: rgba(255,255,255,0.7); }
-.switcher-btn.active { background: white; color: #6B1E35; }
-/* Enterprise mode overrides */
-.hero.mode-entreprise h1 em { color: #7EC8E3; }
-.hero.mode-entreprise .hero-cta { background: #EEF3FC; }
-.hero.mode-entreprise .btn-hero-primary { background: #1A3A5C; }
-.hero.mode-entreprise .hero-features { background: #dce9f8; }
-.hero.mode-entreprise .btn-hero-secondary { color: #1A3A5C; border-color: #1A3A5C; }
-.hero.mode-entreprise .switcher-btn.active { color: #1A3A5C; }
 
 @media (max-width: 900px) {
   .hero-inner { grid-template-columns: 1fr; gap: 40px; }
@@ -352,12 +341,6 @@ footer { background: #2C1018; padding: 36px 6%; }
 </nav>
 
 <section class="hero" id="hero-section">
-  <div class="hero-switcher-wrap">
-    <div class="hero-switcher">
-      <button class="switcher-btn active" data-mode="independant" onclick="setHeroMode('independant')">Assistante indépendante</button>
-      <button class="switcher-btn" data-mode="entreprise" onclick="setHeroMode('entreprise')">Assistante en entreprise</button>
-    </div>
-  </div>
   <div class="hero-top">
     <div class="hero-left">
       <h1 id="hero-h1">Le logiciel <em>Tout en 1</em><br>pour les assistantes<br>indépendantes qui permet<br>de <em>piloter vos clients</em></h1>
@@ -547,10 +530,6 @@ footer { background: #2C1018; padding: 36px 6%; }
              style="flex:1;padding:10px 6px;border:1.5px solid rgba(107,31,48,0.15);border-radius:8px;text-align:center;cursor:pointer;font-size:12px;color:#7A6E68;transition:all 0.15s;line-height:1.5">
           👤 Assistante<br>indépendante
         </div>
-        <div class="signup-type-opt" data-val="enterprise" onclick="selectSignupType(this)"
-             style="flex:1;padding:10px 6px;border:1.5px solid rgba(107,31,48,0.15);border-radius:8px;text-align:center;cursor:pointer;font-size:12px;color:#7A6E68;transition:all 0.15s;line-height:1.5">
-          🏢 Assistante<br>en entreprise
-        </div>
       </div>
     </div>
     <div id="signup-error" style="font-size:13px;color:#c0392b;margin-bottom:8px;min-height:18px"></div>
@@ -617,53 +596,6 @@ const MODES = {
         { num: '01', title: 'Conçu par une assistante', desc: 'Josetine est né d\'un besoin réel. Chaque fonctionnalité a été pensée pour le quotidien des assistantes indépendantes, pas pour des comptables ou des commerciaux.' },
         { num: '02', title: 'Tout en un, vraiment', desc: 'Clients, facturation, temps, agenda, fournisseurs, commercial — tout au même endroit. Fini les 10 outils dispersés, les exports manuels et les tableaux Excel interminables.' },
         { num: '03', title: 'Simple et accessible', desc: 'Interface épurée, prise en main immédiate. Démarrez gratuitement avec 3 clients, sans carte bancaire ni engagement. Évoluez à votre rythme.' },
-      ],
-    },
-  },
-  entreprise: {
-    heroBg: '#1A3A5C',
-    h1: "L'outil de pilotage pensé pour <em>l'assistante en entreprise</em>",
-    sub: "Gérez vos entités, vos fournisseurs, vos équipes et vos contentieux — depuis une seule interface, conçue pour votre réalité.",
-    posTitle: 'Une interface entièrement dédiée.',
-    posText: "Pas un outil généraliste adapté — un outil pensé pour vous dès le départ.",
-    ctaIntro: 'Découvrez le plan Entreprise.<br>25&nbsp;€ HT/mois, sans engagement.',
-    ctaBtnText: 'Demander une démo',
-    ctaBtnHref: 'mailto:contact@josetine.com',
-    ctaBtnOnclick: '',
-    ctaNote: '25€ HT/mois · Sans engagement · Facture mensuelle',
-    imgMain: { src: 'images/screenshot1E.png', alt: 'Interface Josetine Entreprise' },
-    imgLeft: { src: 'images/screenshot2E.png', alt: 'Fournisseurs Josetine Entreprise' },
-    imgRight: { src: 'images/screenshot3E.png', alt: 'RH Josetine Entreprise' },
-    feats: [
-      { icon: '🏢', text: 'Gestion par entités' }, { icon: '👥', text: 'RH complet' },
-      { icon: '⚖️', text: 'Contentieux & litiges' }, { icon: '📋', text: 'Documentation interne' },
-      { icon: '📅', text: 'Agenda & échéances' }, { icon: '🔑', text: 'Fournisseurs internes' },
-    ],
-    featBtn: { href: 'tarifs.html', text: 'Voir le plan Entreprise →' },
-    trust: [
-      { icon: '🏢', label: 'Gestion par entités', sub: 'Multi-structures' },
-      { icon: '👥', label: 'RH complet', sub: 'Employés & absences' },
-      { icon: '⚖️', label: 'Contentieux', sub: 'Litiges & suivi' },
-      { icon: '🔒', label: 'Données sécurisées', sub: 'AES-256 · Europe' },
-    ],
-    trustBg: '#EEF3FC',
-    navBtnText: 'Demander une démo', navBtnBg: '#1A3A5C',
-    modeClass: 'mode-entreprise',
-    pain: {
-      title: 'Vous vous reconnaissez dans l\'une de ces situations ?',
-      cards: [
-        { icon: '🏢', title: 'Vous gérez plusieurs entités', text: 'Fournisseurs, employés, échéances... chaque structure a ses propres données et vous jongler entre tout ça sans outil dédié.' },
-        { icon: '⏰', title: 'Vous perdez le fil des échéances RH', text: 'Fins de période d\'essai, visites médicales, entretiens annuels... ça passe entre les mailles sans système centralisé.' },
-        { icon: '⚖️', title: 'Vous ne savez plus où en sont vos litiges', text: 'Factures contestées, contentieux en cours... sans suivi structuré, des dossiers traînent sans avancer.' },
-      ],
-    },
-    why: {
-      sub: 'Un outil pensé pour la réalité des assistantes en entreprise',
-      bg: '#1A3A5C',
-      cards: [
-        { num: '01', title: 'Conçu pour l\'entreprise', desc: 'Josetine est né du besoin réel d\'assistantes salariées. Chaque fonctionnalité est pensée pour le quotidien multi-entités, pas pour les indépendants ou les commerciaux.' },
-        { num: '02', title: 'Tout en un, vraiment', desc: 'Entités, fournisseurs, RH, litiges, agenda, documentation — tout au même endroit. Fini les outils dispersés, les exports manuels et les tableaux Excel interminables.' },
-        { num: '03', title: 'Simple et sécurisé', desc: 'Interface épurée, prise en main immédiate. Données chiffrées AES-256, hébergées en Europe. Aucune donnée RH ou sensible ne sort de votre espace.' },
       ],
     },
   },
@@ -759,7 +691,7 @@ function setHeroMode(mode) {
 // Restore saved mode on load
 (function() {
   const saved = localStorage.getItem('josetineMode');
-  if (saved && saved !== 'independant') setHeroMode(saved);
+  if (saved && MODES[saved] && saved !== 'independant') setHeroMode(saved);
 })();
 
 async function submitWaitingList() {
