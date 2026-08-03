@@ -79,7 +79,6 @@ footer{background:#2C1018;padding:36px 6%;}
 .modal-footer-note{text-align:center;margin-top:18px;font-size:13px;color:var(--text-muted);}
 .modal-footer-note a{color:var(--bordeaux);text-decoration:none;font-weight:500;}
 .modal-close{position:absolute;top:14px;right:18px;background:none;border:none;font-size:24px;color:var(--text-muted);cursor:pointer;}
-.signup-type-opt.selected{border-color:var(--bordeaux)!important;background:rgba(107,31,48,0.06);color:var(--bordeaux)!important;font-weight:500;}
 
 @media(max-width:900px){.nav-links{display:none;}}
 @media(max-width:600px){.cta-btns{flex-direction:column;align-items:center;}}
@@ -315,15 +314,7 @@ footer{background:#2C1018;padding:36px 6%;}
     <div class="m-form-group"><label class="m-label">Prénom</label><input type="text" id="signup-prenom" class="m-input" placeholder="Marie"></div>
     <div class="m-form-group"><label class="m-label">Nom</label><input type="text" id="signup-nom" class="m-input" placeholder="Martin"></div>
     <div class="m-form-group"><label class="m-label">Email</label><input type="email" id="signup-email" class="m-input" placeholder="marie@email.fr"></div>
-    <div class="m-form-group">
-      <label class="m-label">Vous êtes *</label>
-      <div id="signup-type-group" style="display:flex;gap:8px;margin-top:4px">
-        <div class="signup-type-opt" data-val="independant" onclick="selectSignupType(this)"
-             style="flex:1;padding:10px 6px;border:1.5px solid rgba(107,31,48,0.15);border-radius:8px;text-align:center;cursor:pointer;font-size:12px;color:#7A6E68;transition:all 0.15s;line-height:1.5">
-          👤 Assistante<br>indépendante
-        </div>
-      </div>
-    </div>
+    <div class="m-form-group"><label class="m-label">Téléphone</label><input type="tel" id="signup-telephone" class="m-input" placeholder="06 12 34 56 78" required></div>
     <div id="signup-error" style="font-size:13px;color:#c0392b;margin-bottom:8px;min-height:18px"></div>
     <button class="m-btn" onclick="submitWaitingList()">Rejoindre la liste d'attente</button>
     <div class="modal-footer-note">Déjà un compte ? <a href="#" onclick="switchModal('signup','login');return false;">Se connecter</a></div>
@@ -332,15 +323,9 @@ footer{background:#2C1018;padding:36px 6%;}
 
 <script src="mobile-nav.js"></script>
 <script>
-let _selectedType = '';
 function openModal(t){document.getElementById(t+'Modal').classList.add('open');}
 function closeModal(t){document.getElementById(t+'Modal').classList.remove('open');}
 function switchModal(a,b){closeModal(a);setTimeout(()=>openModal(b),100);}
-function selectSignupType(el){
-  _selectedType=el.dataset.val;
-  document.querySelectorAll('.signup-type-opt').forEach(o=>o.classList.remove('selected'));
-  el.classList.add('selected');
-}
 document.querySelectorAll('.modal-overlay').forEach(m=>{m.addEventListener('click',function(e){if(e.target===this)this.classList.remove('open');});});
 
 function toggleFaq(btn){
@@ -354,17 +339,18 @@ async function submitWaitingList(){
   const prenom=(document.getElementById('signup-prenom')?.value||'').trim();
   const nom=(document.getElementById('signup-nom')?.value||'').trim();
   const email=(document.getElementById('signup-email')?.value||'').trim();
+  const telephone=(document.getElementById('signup-telephone')?.value||'').trim();
   const errEl=document.getElementById('signup-error');
   if(errEl)errEl.textContent='';
-  if(!prenom||!nom||!email||!_selectedType){
-    if(errEl)errEl.textContent=!_selectedType?'Veuillez indiquer votre profil.':'Veuillez remplir tous les champs.';
+  if(!prenom||!nom||!email||!telephone){
+    if(errEl)errEl.textContent='Veuillez remplir tous les champs.';
     return;
   }
   try{
     const r=await fetch('https://app.martines.app/api/liste-attente',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({prenom,nom,email,type_compte:_selectedType}),
+      body:JSON.stringify({prenom,nom,email,telephone,type_compte:'independant'}),
     });
     const data=await r.json().catch(()=>({}));
     if(r.ok){

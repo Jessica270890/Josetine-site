@@ -317,6 +317,7 @@ footer{background:#2C1018;padding:36px 6%;}
     <div class="m-form-group"><label class="m-label">Prénom</label><input type="text" id="signup-prenom" class="m-input" placeholder="Marie"></div>
     <div class="m-form-group"><label class="m-label">Nom</label><input type="text" id="signup-nom" class="m-input" placeholder="Martin"></div>
     <div class="m-form-group"><label class="m-label">Email</label><input type="email" id="signup-email" class="m-input" placeholder="marie@email.fr"></div>
+    <div class="m-form-group"><label class="m-label">Téléphone</label><input type="tel" id="signup-telephone" class="m-input" placeholder="06 12 34 56 78" required></div>
     <div id="signup-error" style="font-size:13px;color:#c0392b;margin-bottom:8px;min-height:18px"></div>
     <button class="m-btn" onclick="submitWaitingList()">Rejoindre la liste d'attente</button>
     <div class="modal-footer-note">Déjà un compte ? <a href="#" onclick="switchModal('signup','login');return false;">Se connecter</a></div>
@@ -333,9 +334,10 @@ async function submitWaitingList() {
   const prenom = (document.getElementById('signup-prenom')?.value || '').trim();
   const nom    = (document.getElementById('signup-nom')?.value    || '').trim();
   const email  = (document.getElementById('signup-email')?.value  || '').trim();
+  const telephone = (document.getElementById('signup-telephone')?.value || '').trim();
   const errEl  = document.getElementById('signup-error');
   if (errEl) errEl.textContent = '';
-  if (!prenom || !nom || !email) {
+  if (!prenom || !nom || !email || !telephone) {
     if (errEl) errEl.textContent = 'Veuillez remplir tous les champs.';
     return;
   }
@@ -343,7 +345,7 @@ async function submitWaitingList() {
     const r = await fetch('https://app.martines.app/api/liste-attente', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ prenom, nom, email, type_compte: 'independant' }),
+      body: JSON.stringify({ prenom, nom, email, telephone, type_compte: 'independant' }),
     });
     const data = await r.json().catch(() => ({}));
     if (r.ok) {
