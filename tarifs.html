@@ -27,7 +27,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,245,
 .page-hero p{font-size:17px;color:rgba(255,255,255,0.65);font-weight:300;max-width:520px;margin:0 auto;}
 
 .pricing-section{padding:60px 6% 80px;}
-.pricing-inner{max-width:1200px;margin:0 auto;}
+.pricing-inner{max-width:1280px;margin:0 auto;}
 
 .toggle-wrap{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:48px;}
 .toggle-label{font-size:15px;color:var(--text-muted);}
@@ -41,7 +41,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,245,
 .plan-gift-icon{display:inline-flex;vertical-align:-3px;margin-right:4px;}
 .plan-gift-icon svg{width:13px;height:13px;}
 
-.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:60px;}
+.plans{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:60px;}
 .plan{background:white;border:1px solid var(--border);border-radius:16px;padding:28px 22px;display:flex;flex-direction:column;transition:box-shadow 0.2s;}
 .plan:hover{box-shadow:0 8px 32px rgba(107,31,48,0.1);}
 .plan.featured{border:2px solid var(--bordeaux);}
@@ -101,7 +101,8 @@ footer{background:#2C1018;padding:36px 6%;}
 .modal-footer-note{text-align:center;margin-top:18px;font-size:13px;color:var(--text-muted);}
 .modal-footer-note a{color:var(--bordeaux);text-decoration:none;font-weight:500;}
 .modal-close{position:absolute;top:14px;right:18px;background:none;border:none;font-size:24px;color:var(--text-muted);cursor:pointer;}
-@media(max-width:900px){.plans{grid-template-columns:1fr 1fr;}.nav-links{display:none;}}
+@media(max-width:1100px){.plans{grid-template-columns:1fr 1fr;}}
+@media(max-width:900px){.nav-links{display:none;}}
 @media(max-width:600px){.plans{grid-template-columns:1fr;}}
 </style>
 <link rel="stylesheet" href="mobile-nav.css">
@@ -156,28 +157,55 @@ footer{background:#2C1018;padding:36px 6%;}
     <div class="plans">
 
       <div class="plan">
-        <div style="text-align:center;margin-bottom:10px"><span style="background:#6B1F30;color:white;font-size:12px;font-weight:500;padding:4px 12px;border-radius:20px"><span class="plan-gift-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M20 11v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"/><path d="M7.5 7a1 1 0 0 1 0-5A4.8 8 0 0 1 12 7a4.8 8 0 0 1 4.5-5 1 1 0 0 1 0 5"/><rect x="3" y="7" width="18" height="4" rx="1"/></svg></span>15 jours gratuits</span></div>
+        <div style="text-align:center;margin-bottom:10px"><span style="background:#6B1F30;color:white;font-size:12px;font-weight:500;padding:4px 12px;border-radius:20px">Sans engagement</span></div>
         <div class="plan-name">Découverte</div>
         <div class="plan-tagline">Pour démarrer en douceur</div>
-        <div class="plan-price" id="p-dec">12 € HT<sub> / mois</sub></div>
-        <div class="plan-period" id="per-dec">Facturé 144 € HT/an</div>
+        <div class="plan-price">Gratuit</div>
+        <div class="plan-period">Aucun engagement</div>
         <hr class="plan-divider">
         <div class="plan-section-label">Inclus</div>
         <div class="plan-feature"><span class="check">✓</span>1 utilisatrice</div>
-        <div class="plan-feature"><span class="check">✓</span>3 clients maximum</div>
+        <div class="plan-feature"><span class="check">✓</span>1 client maximum</div>
         <div class="plan-feature"><span class="check">✓</span>5 prospects maximum</div>
         <div class="plan-feature"><span class="check">✓</span>Propositions</div>
         <div class="plan-feature"><span class="check">✓</span>Tâches illimitées</div>
         <div class="plan-feature"><span class="check">✓</span>Tableau de bord</div>
-        <div class="plan-feature"><span class="check">✓</span>5 identifiants fournisseurs maximum</div>
+        <div class="plan-feature"><span class="check">✓</span>Identifiants fournisseurs</div>
+        <div class="plan-feature"><span class="check">✓</span>Contrats clients &amp; Échéances (limités à la fiche client)</div>
         <div class="plan-feature off"><span class="check" style="color:#ccc">✗</span>Agenda intégré</div>
         <div class="plan-feature off"><span class="check" style="color:#ccc">✗</span>Suivi de facturation</div>
         <div class="plan-feature off"><span class="check" style="color:#ccc">✗</span>Suivi du temps</div>
-        <div class="plan-feature off"><span class="check" style="color:#ccc">✗</span>Contrats</div>
+        <div class="plan-feature off"><span class="check" style="color:#ccc">✗</span>Salariés (RH)</div>
+        <div class="plan-feature off"><span class="check" style="color:#ccc">✗</span>Litiges</div>
+        <div class="plan-feature off"><span class="check" style="color:#ccc">✗</span>Missions</div>
         <div class="plan-feature off"><span class="check" style="color:#ccc">✗</span>Collaborateurs</div>
         <div class="plan-feature off"><span class="check" style="color:#ccc">✗</span>Procédures</div>
         <div class="plan-feature off"><span class="check" style="color:#ccc">✗</span>Exports PDF / Excel</div>
-        <div class="plan-btn btn-outline-plan"><a href="#" onclick="openSignupForPlan('Découverte');return false;">Commencer l'essai</a></div>
+        <div class="plan-btn btn-outline-plan"><a href="#" onclick="openSignupForPlan('Découverte');return false;">Créer mon compte gratuit</a></div>
+        <p style="text-align:center;font-size:12px;color:#888;margin-top:10px;line-height:1.6">Aucune carte bancaire requise</p>
+      </div>
+
+      <div class="plan">
+        <div style="text-align:center;margin-bottom:10px"><span style="background:#6B1F30;color:white;font-size:12px;font-weight:500;padding:4px 12px;border-radius:20px"><span class="plan-gift-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M20 11v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"/><path d="M7.5 7a1 1 0 0 1 0-5A4.8 8 0 0 1 12 7a4.8 8 0 0 1 4.5-5 1 1 0 0 1 0 5"/><rect x="3" y="7" width="18" height="4" rx="1"/></svg></span>15 jours gratuits</span></div>
+        <div class="plan-name">Starter</div>
+        <div class="plan-tagline">Pour poser les bases de votre activité</div>
+        <div class="plan-price" id="p-sta">12 € HT<sub> / mois</sub></div>
+        <div class="plan-period" id="per-sta">Facturé 144 € HT en une fois · engagement 1 an</div>
+        <hr class="plan-divider">
+        <div class="plan-section-label">Tout Découverte, plus :</div>
+        <div class="plan-feature"><span class="check">✓</span>3 clients maximum</div>
+        <div class="plan-feature"><span class="check">✓</span>10 prospects maximum</div>
+        <div class="plan-feature"><span class="check">✓</span>Contrats internes (jusqu'à 3)</div>
+        <div class="plan-feature"><span class="check">✓</span>Litiges (limités à la fiche client)</div>
+        <div class="plan-feature"><span class="check">✓</span>Missions (modèles par défaut)</div>
+        <div class="plan-feature off"><span class="check" style="color:#ccc">✗</span>Agenda intégré</div>
+        <div class="plan-feature off"><span class="check" style="color:#ccc">✗</span>Suivi de facturation</div>
+        <div class="plan-feature off"><span class="check" style="color:#ccc">✗</span>Suivi du temps</div>
+        <div class="plan-feature off"><span class="check" style="color:#ccc">✗</span>Salariés (RH)</div>
+        <div class="plan-feature off"><span class="check" style="color:#ccc">✗</span>Collaborateurs</div>
+        <div class="plan-feature off"><span class="check" style="color:#ccc">✗</span>Procédures</div>
+        <div class="plan-feature off"><span class="check" style="color:#ccc">✗</span>Exports PDF / Excel</div>
+        <div class="plan-btn btn-outline-plan"><a href="#" onclick="openSignupForPlan('Starter');return false;">Commencer l'essai</a></div>
         <p style="text-align:center;font-size:12px;color:#888;margin-top:10px;line-height:1.6">15 jours gratuits, sans carte bancaire</p>
       </div>
 
@@ -189,15 +217,15 @@ footer{background:#2C1018;padding:36px 6%;}
         <div class="plan-price" id="p-ind">29 € HT<sub> / mois</sub></div>
         <div class="plan-period" id="per-ind">Facturé 348 € HT en une fois · engagement 1 an</div>
         <hr class="plan-divider">
-        <div class="plan-section-label">Tout Découverte, plus :</div>
+        <div class="plan-section-label">Tout Starter, plus :</div>
         <div class="plan-feature"><span class="check">✓</span>2 utilisatrices</div>
         <div class="plan-feature"><span class="check">✓</span>10 clients maximum</div>
         <div class="plan-feature"><span class="check">✓</span>Prospects illimités</div>
         <div class="plan-feature"><span class="check">✓</span>Agenda intégré (avec sync Google Calendar)</div>
-        <div class="plan-feature"><span class="check">✓</span>Contrats</div>
         <div class="plan-feature"><span class="check">✓</span>Suivi de facturation complet</div>
         <div class="plan-feature"><span class="check">✓</span>Suivi du temps</div>
-        <div class="plan-feature"><span class="check">✓</span>Échéances &amp; Litiges</div>
+        <div class="plan-feature"><span class="check">✓</span>Salariés RH (suit la fiche client)</div>
+        <div class="plan-feature"><span class="check">✓</span>Missions (création personnalisée)</div>
         <div class="plan-feature"><span class="check">✓</span>Identifiants fournisseurs illimités</div>
         <div class="plan-feature"><span class="check">✓</span>Procédures</div>
         <div class="plan-feature"><span class="check">✓</span>Exports PDF / Excel</div>
@@ -215,6 +243,7 @@ footer{background:#2C1018;padding:36px 6%;}
         <div class="plan-section-label">Tout Indépendant, plus :</div>
         <div class="plan-feature"><span class="check">✓</span>Utilisatrices illimitées</div>
         <div class="plan-feature"><span class="check">✓</span>Clients illimités</div>
+        <div class="plan-feature"><span class="check">✓</span>Missions (création illimitée)</div>
         <div class="plan-feature"><span class="check">✓</span>Collaborateurs</div>
         <div class="plan-feature"><span class="check">✓</span>Support prioritaire</div>
         <div class="plan-btn btn-outline-plan"><a href="#" onclick="openSignupForPlan('Studio');return false;">Choisir ce plan</a></div>
@@ -241,11 +270,11 @@ footer{background:#2C1018;padding:36px 6%;}
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">Y a-t-il un engagement minimum ? <span>+</span></div>
-      <div class="faq-a">Cela dépend du mode de facturation choisi pour les plans Indépendant et Studio. En mensuel, aucun engagement : vous pouvez résilier dès le mois suivant depuis votre espace paramètres. En annuel, l'abonnement est engagé jusqu'à la fin de la période choisie (1 an), en échange d'un tarif réduit. Dans les deux cas, votre accès reste actif jusqu'à la fin de la période déjà payée.</div>
+      <div class="faq-a">Le plan Découverte est gratuit et sans engagement. Pour les plans Starter, Indépendant et Studio, cela dépend du mode de facturation choisi. En mensuel, aucun engagement : vous pouvez résilier dès le mois suivant depuis votre espace paramètres. En annuel, l'abonnement est engagé jusqu'à la fin de la période choisie (1 an), en échange d'un tarif réduit. Dans les deux cas, votre accès reste actif jusqu'à la fin de la période déjà payée.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">Que se passe-t-il si je dépasse la limite de clients du plan Découverte ? <span>+</span></div>
-      <div class="faq-a">Josetine vous préviendra lorsque vous approchez de la limite de 3 clients. Vous pourrez alors passer au plan Indépendant pour des clients illimités.</div>
+      <div class="faq-q" onclick="toggleFaq(this)">Que se passe-t-il si je dépasse la limite de clients de mon plan ? <span>+</span></div>
+      <div class="faq-a">Josetine vous préviendra lorsque vous approchez de la limite de votre plan (1 client pour Découverte, 3 pour Starter, 10 pour Indépendant). Vous pourrez passer au plan supérieur à tout moment, jusqu'au plan Studio pour des clients illimités.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">Mes données sont-elles sécurisées ? <span>+</span></div>
@@ -377,15 +406,11 @@ function toggleBilling(){
   thumb.className='toggle-thumb'+(annual?' right':'');
   document.getElementById('label-monthly').className='toggle-label'+(annual?'':' on');
   document.getElementById('label-annual').className='toggle-label'+(annual?' on':'');
-  const data={dec:[12,12],ind:[35,29],stu:[52,45]};
+  const data={sta:[15,12],ind:[35,29],stu:[52,45]};
   for(const[k,[m,a]] of Object.entries(data)){
     const p=annual?a:m;
     document.getElementById('p-'+k).innerHTML=p+' € HT<sub> / mois</sub>';
-    if(k==='dec'){
-      document.getElementById('per-'+k).textContent='Facturé '+(p*12)+' € HT/an';
-    } else {
-      document.getElementById('per-'+k).textContent=annual?'Facturé '+(p*12)+' € HT en une fois · engagement 1 an':'Sans engagement';
-    }
+    document.getElementById('per-'+k).textContent=annual?'Facturé '+(p*12)+' € HT en une fois · engagement 1 an':'Sans engagement';
   }
 }
 function toggleFaq(el){
